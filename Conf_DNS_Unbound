@@ -1,0 +1,24 @@
+server:
+    
+        interface: 0.0.0.0
+
+        access-control: 192.168.3.0/24 allow
+        access-control: 127.0.0.1 allow
+        access-control: 192.168.3.104 allow
+        access-control: 0.0.0.0/0 allow
+        access-control: ::/0 allow
+        
+        local-zone: "debianredes.com." static
+        local-data: "www.debianredes.com. A 192.168.3.104"
+        local-data: "debianredes.com. A 192.168.3.104"
+        local-data: "ftp.debianredes.com. A 192.168.3.104"
+        local-data: "debianredes.com. MX 5 mail.debianredes.com."
+
+forward-zone:
+        
+        name: "."
+
+        forward-addr: 4.2.2.2
+        forward-addr: 4.2.2.1
+        forward-first: yes
+
